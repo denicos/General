@@ -15,7 +15,7 @@ const AgentSchema = mongoose.Schema({
         type: String,
 
     },
-    adress: {
+    address: {
         type: String
     },
     agent_type: {
