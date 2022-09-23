@@ -1,0 +1,40 @@
+
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger">{{msg}}</div>
+{{/each}}
+{{/if}}
+
+<div class="container">
+  <h2 class="page-header h2 text-center py-3">REGISTER</h2>
+
+
+<form class="row g-3 needs-validation" method="POST" action="/admin/register">
+  <div class="col-md-4">
+    <label class="form-label">First name</label>
+    <input type="text" class="form-control" name="firstname" required>
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">Last name</label>
+    <input type="text" class="form-control" name="lastname" required>
+  </div>
+  <div class="col-md-4">
+    <label  class="form-label">Username</label>
+    <div class="input-group">
+      <input type="text" class="form-control" name="username" placeholder="enter username" required>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password2">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Register</button>
+  </div>
+</form>
+
+</div>

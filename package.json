@@ -1,0 +1,43 @@
+{
+    "name": "general",
+    "version": "1.0.0",
+    "description": "search and find",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "keywords": [
+        "exports",
+        "exporters",
+        "imports",
+        "importers",
+        "uganda",
+        "world",
+        "agriculture",
+        "produce"
+    ],
+    "author": "Lord_muno",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "*",
+        "body-parser": "*",
+        "connect-flash": "*",
+        "cookie-parser": "^1.4.1",
+        "express": "*",
+        "express-handlebars": "*",
+        "express-messages": "*",
+        "express-session": "*",
+        "express-validator": "^5.3.1",
+        "moment": "^2.29.4",
+        "mongodb": "*",
+        "mongoose": "*",
+        "passport": "*",
+        "passport-http": "*",
+        "passport-local": "*",
+        "pdfkit": "^0.13.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    }
+}

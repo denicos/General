@@ -1,0 +1,82 @@
+<div class="table-responsive py-3">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Column 1</th>
+                <th scope="col">Column 2</th>
+                <th scope="col">Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="">
+                <td scope="row">R1C1</td>
+                <td>R1C2</td>
+                <td>R1C3</td>
+            </tr>
+            <tr class="">
+                <td scope="row">Item</td>
+                <td>Item</td>
+                <td>Item</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal trigger button -->
+<button type="button" class="btn btn-primary btn-md py-3" data-bs-toggle="modal" data-bs-target="#modalId">
+  ADD INFORMATION
+</button>
+
+<!-- Modal Body -->
+<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">ADD CLEARING AGENT</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3 needs-validation" novalidate method="POST" action="/clearing">
+                    <input type="text" hidden value="clearing" name="agent_type"/>
+                  <div class="col-md-12">
+                    <label for="validationCustom01" class="form-label">NAME</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="name" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="validationCustom03" class="form-label">COMPANY</label>
+                    <input type="text" class="form-control" id="validationCustom03"  name="company" required>
+                    <div class="invalid-feedback">
+                      Please provide a valid company name
+                    </div>
+                  </div>
+                 
+                  
+                  <div class="col-12">
+                    <div class="input-group">
+                        <span class="input-group-text">Phone and Address</span>
+                        <input type="text" aria-label=" phone" name="contact" class="form-control">
+                        <input type="text" aria-label="address" name="address" class="form-control">
+                   </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                  </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+
+</script>
