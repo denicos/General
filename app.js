@@ -10,9 +10,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
+const dotenv = require('dotenv')
+
+
+//load config
+dotenv.config({ path: './config/config.env' })
+
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://nicoswaves:niecshenz2020@cluster0.p3b1y.mongodb.net/Uganda?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 var db = mongoose.connection;
 //Check connection
 db.once('open', function() {
