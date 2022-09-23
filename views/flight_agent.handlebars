@@ -1,4 +1,4 @@
-<h1>CLEARING AGENTS</h1>
+<h1>FLIGHT AGENTS</h1>
  
 <div class="table-responsive py-3">
     <table class="table table-primary">
@@ -16,7 +16,7 @@
                 <td scope="row">{{name}}</td>
                 <td>{{company}}</td>
                 <td>
-                    <a href="/contact/{{_id}}">VIEW CONTACT</a>
+                    <a href="">VIEW CONTACT</a>
                 </td>
             </tr>
             
@@ -37,12 +37,12 @@
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalTitleId">ADD CLEARING AGENT</h5>
+                <h5 class="modal-title" id="modalTitleId">ADD FLIGHT AGENT</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form class="row g-3 needs-validation" novalidate method="POST" action="/clearing">
-                    <input type="text" hidden value="clearing" name="agent_type"/>
+                    <input type="text" hidden value="flight" name="agent_type"/>
                   <div class="col-md-12">
                     <label for="validationCustom01" class="form-label">NAME</label>
                     <input type="text" class="form-control" id="validationCustom01" name="name" required>

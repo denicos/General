@@ -14,7 +14,7 @@ const dotenv = require('dotenv')
 
 
 //load config
-dotenv.config({ path: './config/config.env' })
+dotenv.config({ path: './config/db.env' })
 
 
 mongoose.Promise = global.Promise
