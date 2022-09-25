@@ -19,7 +19,6 @@ function ensureAuthenticated(req, res, next) {
     }
 }
 
-
 //Get clearing agent view
 router.get('/clearing', async(req, res) => {
 
@@ -88,7 +87,6 @@ router.get('/payment', async(req, res) => {
 //single agent view.
 
 router.get('/contact/:id', async(req, res) => {
-    PAYMENT_URI = "https://flutterwave.com/pay/clearing"
     const agent = await Agent.findOne({
             _id: req.params.id
         })
