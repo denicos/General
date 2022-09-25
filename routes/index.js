@@ -22,6 +22,7 @@ function ensureAuthenticated(req, res, next) {
 
 //Get clearing agent view
 router.get('/clearing', async(req, res) => {
+
     try {
         const agents = await Agent.find({ agent_type: 'clearing' })
             .populate("agent_type")
@@ -51,6 +52,7 @@ router.post('/clearing', async(req, res) => {
 //process flight agents
 //Get clearing agent view
 router.get('/flight', async(req, res) => {
+
     try {
         const agents = await Agent.find({ agent_type: 'flight' })
             .populate("agent_type")
@@ -76,19 +78,29 @@ router.post('/flight', async(req, res) => {
     }
 })
 
+//process payment
+router.get('/payment', async(req, res) => {
+    res.render('payment')
+})
+
+
+
 //single agent view.
 
 router.get('/contact/:id', async(req, res) => {
+    PAYMENT_URI = "https://flutterwave.com/pay/clearing"
     const agent = await Agent.findOne({
             _id: req.params.id
         })
         .populate("_id")
         .lean()
-
     if (!agent) {
         return res.render('errors/404')
     } else {
+
         res.render('full_agent_info', { layout: 'general', agent })
+
+
     }
 })
 

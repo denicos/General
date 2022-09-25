@@ -7,6 +7,10 @@ const bcrypt = require('bcryptjs');
 const Admin = require('../models/Admin');
 
 
+//get admin index
+router.get('/index', function(req, res) {
+    res.render('admin/admin_index', { layout: 'admin' });
+});
 
 //Login
 router.get('/login', function(req, res) {
