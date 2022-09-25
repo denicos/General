@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+var bodyParser = require('body-parser');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
-const Admin = require('../models/admin');
+const Admin = require('../models/Admin');
 
 
 
@@ -98,11 +99,9 @@ passport.deserializeUser(function(id, done) {
 });
 
 //  Login user
-router.post('/login', passport.authenticate('local', { successRedirect: 'admin_index', failureRedirect: 'register', failureFlash: true }), function(req, res) {
-    req.session.admin = req.admin
-    console.log(req.admin)
-    console.log(req.params.id)
-    res.redirect('admin_index', { layout: 'admin' });
+router.post('/login', passport.authenticate('local', { successRedirect: 'admin/admin_index', failureRedirect: '/login', failureFlash: true }), function(req, res) {
+
+    res.redirect('admin/admin_index', { layout: 'admin' });
 
 });
 
@@ -111,7 +110,7 @@ router.post('/login', passport.authenticate('local', { successRedirect: 'admin_i
 router.get('/logout', function(req, res, next) {
     req.logout(function(err) {
         if (err) { return next(err); }
-        res.redirect('/admin/login');
+        res.redirect('/login');
     });
 });
 
