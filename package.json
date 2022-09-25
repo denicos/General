@@ -30,14 +30,12 @@
         "express-messages": "*",
         "express-session": "*",
         "express-validator": "^5.3.1",
-        "flutterwave-node": "^1.2.2",
         "moment": "^2.29.4",
         "mongodb": "*",
         "mongoose": "*",
         "passport": "*",
         "passport-http": "*",
-        "passport-local": "*",
-        "pdfkit": "^0.13.0"
+        "passport-local": "*"
     },
     "devDependencies": {
         "nodemon": "^2.0.19"
