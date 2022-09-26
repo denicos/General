@@ -11,6 +11,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 const dotenv = require('dotenv')
+const Flutterwave = require('flutterwave-node-v3');
 
 
 //load config

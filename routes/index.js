@@ -5,11 +5,44 @@ const Exporter = require('../models/Exporter')
 const Inspector = require('../models/Inspector');
 const Product = require('../models/Product');
 const Space = require('../models/Space')
+const Flutterwave = require('flutterwave-node-v3');
+const dotenv = require('dotenv')
+dotenv.config({ path: './config/db.env' })
 
 //Get Homepage
 router.get('/', function(req, res) {
     res.render('index');
 });
+
+//get payment page
+router.get('/payment', function(req, res) {
+    res.render('payment', { layout: 'admin' });
+});
+
+function generateTransactionReference() {
+    return Math.random().toString(36).slice(2)
+}
+//process payment
+router.post('/payment', async(req, res) => {
+    try {
+        const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+        const payload = {
+            phone_number: req.body.phone,
+            network: req.body.netwok,
+            amount: req.body.amount,
+            currency: req.body.currency,
+            email: req.body.email,
+            tx_ref: generateTransactionReference(),
+        }
+        flw.MobileMoney.uganda(payload).then(console.log)
+    } catch (err) {
+        console.error(err)
+        res.render('errors/500 ')
+
+    }
+})
+
+
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {

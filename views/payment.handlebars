@@ -1,0 +1,28 @@
+<form method="POST" action="/payment">
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" id="phone" name="phone">
+  </div>
+  <div class="mb-3">
+    <select class="form-select" name="network" aria-label="Network">
+     <option selected>Open this mobile money network</option>
+    <option value="MTN">MTN</option>
+     <option value="AIRTEL">AIRTEL</option>
+</select>
+  </div>
+  <div class="mb-3">
+    <label for="amount" class="form-label">Amount</label>
+    <input type="text" class="form-control" id="amount" name="amount">
+  </div>
+
+  <div class="mb-3">
+    <label for="currency" class="form-label">Currency</label>
+    <input type="text" class="form-control" id="currency" name="currency" value="UGX" readonly>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
