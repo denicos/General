@@ -35,6 +35,11 @@ router.post('/payment', async(req, res) => {
             tx_ref: generateTransactionReference(),
         }
         flw.MobileMoney.uganda(payload).then(console.log)
+        if ((flw.MobileMoney.uganda(payload)).status == "success") {
+            console.log(redirect)
+        }
+        // const response = await flw.Transaction.verify(payload)
+        // console.log(response)
     } catch (err) {
         console.error(err)
         res.render('errors/500 ')
@@ -100,24 +105,16 @@ router.get('/flight', async(req, res) => {
 //@desc process add flight agent form
 //@route post /flight
 router.post('/flight', async(req, res) => {
-    try {
-        await Agent.create(req.body)
-        res.redirect('/flight')
-    } catch (err) {
-        console.error(err)
-        res.render('errors/500 ')
+        try {
+            await Agent.create(req.body)
+            res.redirect('/flight')
+        } catch (err) {
+            console.error(err)
+            res.render('errors/500 ')
 
-    }
-})
-
-//process payment
-router.get('/payment', async(req, res) => {
-    res.render('payment')
-})
-
-
-
-//single agent view.
+        }
+    })
+    //single agent view.
 
 router.get('/contact/:id', async(req, res) => {
     const agent = await Agent.findOne({
