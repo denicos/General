@@ -3,10 +3,6 @@
     "version": "1.0.0",
     "description": "search and find",
     "main": "app.js",
-    "engines": {
-        "node": ">=18.7.0",
-        "npm": ">=8.19.1"
-    },
     "scripts": {
         "start": "node app.js",
         "dev": "nodemon app.js"

@@ -34,7 +34,6 @@ db.on('error', function(err) {
 
 
 var routes = require('./routes/index');
-var admin = require('./routes/admin');
 
 // Init App
 var app = express();
@@ -50,7 +49,7 @@ app.set('view engine', 'handlebars');
 
 
 //BodyParser MiddleWare
-app.use(express.json());
+//app.use(express.json());
 //app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(cookieParser);
 
