@@ -35,11 +35,8 @@ router.post('/payment', async(req, res) => {
             tx_ref: generateTransactionReference(),
         }
         flw.MobileMoney.uganda(payload).then(console.log)
-        if ((flw.MobileMoney.uganda(payload)).status == "success") {
-            console.log(redirect)
-        }
-        // const response = await flw.Transaction.verify(payload)
-        // console.log(response)
+            // const response = await flw.Transaction.verify(payload)
+            // console.log(response)
     } catch (err) {
         console.error(err)
         res.render('errors/500 ')
