@@ -9,7 +9,7 @@ const Flutterwave = require('flutterwave-node-v3');
 const dotenv = require('dotenv')
 dotenv.config({ path: './config/db.env' })
 
-//Get Homepage
+//Get Homepag
 router.get('/', function(req, res) {
     res.render('index');
 });
